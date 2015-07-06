@@ -11,7 +11,7 @@ var authClient = new FirebaseSimpleLogin(myDataRef, function(error, user) {
   }
 });
 
-  
+
 //User Reg form:
 
 $("#registerButton").on("click", function() {
@@ -27,7 +27,7 @@ $("#registerButton").on("click", function() {
       localStorage.setItem("uid", user.uid);
       localStorage.setItem("provider", user.provider);
       localStorage.setItem("firstName",firstname);
-      window.location = "http://localhost:8000/index.html";
+      window.location = "/index.html";
     } else {
       alert(error);
     }
@@ -36,7 +36,7 @@ $("#registerButton").on("click", function() {
 });
 
 function goHome() {
-  window.location = "http://localhost:8000/index.html"
+  window.location = "/index.html"
 }
 
 function getUserData(authData) {
@@ -50,7 +50,7 @@ function getUserData(authData) {
     localStorage.setItem("currentPlan", currentPlan);
     //redirect to user-enabled home page
     goHome();
-   });  
+   });
 }
 
 //end registration
@@ -81,7 +81,7 @@ $("#loginButton").on("click", function(e) {
     } else {
       localStorage.setItem("uid", authData.uid);
       localStorage.setItem("provider", authData.provider);
-      getUserData(authData);      
+      getUserData(authData);
     }
     return false;
   });
