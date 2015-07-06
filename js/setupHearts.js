@@ -3,7 +3,7 @@ function setupHearts(currentImgURL,currentSlideCaptionText) {
     $('#hearts').click(function() {         //reattach click handler for heart
         if (typeof localStorage.uid == 'undefined') {
           alert("You must be logged in to save a photo");
-          window.location = "http://localhost:8000/login-signup.html";
+          window.location = "/login-signup.html";
         }
         if ($(this).hasClass('filledHeart')) {
           $(this).removeClass().addClass('brokenHeart');
@@ -21,5 +21,5 @@ function setupHearts(currentImgURL,currentSlideCaptionText) {
 }
 
 function savedHeart(){
-   $('#hearts').removeClass().addClass("filledHeart");  
+   $('#hearts').removeClass().addClass("filledHeart");
 }
