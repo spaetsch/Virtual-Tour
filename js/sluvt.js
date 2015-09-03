@@ -92,6 +92,12 @@ function updateStockLink(currentSlideNumber){
 }
 
 $(document).ready(function() {
+  console.log("in console ready function");
+  console.log("window.location.pathname ", window.location.pathname );
+  var currentPath = window.location.pathname;
+  var currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+
+
   if (window.location.pathname === "/plan.html") {
     if(localStorage.firstName === undefined) {
       $("#plansParent").replaceWith('<h4>Please log in to see your plans.</h4>');
@@ -104,7 +110,10 @@ $(document).ready(function() {
       loadFavorites();
       loadPlanViewer(localStorage.currentPlan);
     }
-  } else if( window.location.pathname === "/index.html" || window.location.pathname === "/"){
+  } //else if( window.location.pathname === "/index.html" || window.location.pathname === "/"){
+    else if(currentPage == "index.html"){
+
+    console.log("in sluvt.js in window location pathname");
     $('.bxslider').bxSlider({
       adaptiveHeight: true,
       slideWidth: 850,
